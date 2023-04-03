@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="88a1bd08-4964-492d-9d07-0a56e1da6fdb" name="Changes" comment="Atualização!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sp/senai/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sp/senai/Produto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/projetos/prj_coma_bem/mysql-connector-j-8.0.32.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -69,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680509954685</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Atualização!">
+      <created>1680510952872</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680510952872</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

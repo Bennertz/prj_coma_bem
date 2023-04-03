@@ -4,7 +4,7 @@ public class Produto {
     private int idproduto; // Variável que armazena o identificador do produto
     private String nome_produto; // Variável que armazena o nome do produto
     private double quantidade_produto; // Variável que armazena a quantidade do produto
-    private float preco_produto; // Variável que armazena o preço do produto
+    private double preco_produto; // Variável que armazena o preço do produto
     private int fk_idunidade_medida; // Variável que armazena o identificador da unidade de medida
 
     // Construtor da classe Produto
@@ -47,7 +47,7 @@ public class Produto {
     }
 
     // Método para recuperar o preço do produto
-    public float getPreco_produto() {
+    public double getPreco_produto() {
         return preco_produto;
     }
 
