@@ -7,6 +7,26 @@ public class Main {
     static final String DATABASE_URL = "jdbc:mysql://localhost:3306/loja_coma_bem";
 
     public static void main(String[] args) {
+
+        Produto p1 = new Produto();
+        UnidadeMedida u1 = new UnidadeMedida();
+
+        p1.setIdproduto(5);
+        p1.setNome_produto("Macarrão");
+        p1.setQuantidade_produto(5.00);
+        p1.setPreco_produto(9.55);
+        p1.setFk_idunidade_medida(1);
+
+        u1.setIdunidade_medida(4);
+        u1.setNome_unidade_medida("Miligrama");
+
+        System.out.println("O produto cadastrado é:");
+        System.out.println("Código: " + p1.getIdproduto());
+        System.out.println("Produto: " + p1.getNome_produto());
+        System.out.println("Quantidade: " + p1.getQuantidade_produto());
+        System.out.println("Preço: " + p1.getPreco_produto());
+        System.out.println("Unidade medida: " + p1.getFk_idunidade_medida());
+
         Connection connection = null; // Gerenciar a conexão
         Statement stm = null; // Instrução de consulta
         ResultSet rs = null; // Gerenciar o resultado

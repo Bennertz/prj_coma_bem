@@ -5,7 +5,7 @@ public class UnidadeMedida {
     private  String nome_unidade_medida; // Variável que armazena o nome da unidade de medida
 
     // Construtor da classe UnidadeMedida
-    public UnidadeMedida(int idunidade_medida, String nome_unidade_medida) {
+    public UnidadeMedida() {
         this.idunidade_medida = idunidade_medida;
         this.nome_unidade_medida = nome_unidade_medida;
     }

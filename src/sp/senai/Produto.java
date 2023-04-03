@@ -8,7 +8,7 @@ public class Produto {
     private int fk_idunidade_medida; // Variável que armazena o identificador da unidade de medida
 
     // Construtor da classe Produto
-    public Produto(int idproduto, String nome_produto, double quantidade_produto, float preco_produto, int fk_idunidade_medida) {
+    public Produto() {
         this.idproduto = idproduto;
         this.nome_produto = nome_produto;
         this.quantidade_produto = quantidade_produto;
@@ -52,7 +52,7 @@ public class Produto {
     }
 
     // Método para alterar o preço do produto
-    public void setPreco_produto(float preco_produto) {
+    public void setPreco_produto(double preco_produto) {
         this.preco_produto = preco_produto;
     }
 
