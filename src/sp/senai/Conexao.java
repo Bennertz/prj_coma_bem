@@ -3,9 +3,20 @@ package sp.senai;
 import java.io.StringReader;
 import java.sql.*;
 
+/**
+ *  Classe que faz a conexão via JDBC com pacote
+ *  mysql-connector-j-8.0.32
+ */
 public class Conexao {
+    /**
+     * Objeto Connection
+     */
+    private Connection conexao;
 
-    Connection conexao;
+    /**
+     * Construtor do objeto Conexao que
+     * faz a ligação com o banco de dados
+     */
     public Conexao () {
 
         try {
@@ -16,6 +27,11 @@ public class Conexao {
             System.out.println("Erro na conexão: " + e);
         }
     }
+
+    /**
+     * Método que retorna a conexão criada
+     * @return
+     */
     public Connection getConexao() {
         return this.conexao;
     }
