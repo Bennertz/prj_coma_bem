@@ -1,17 +1,12 @@
 package sp.senai;
 
-import java.sql.*;
-
 public class Main {
-    // URL do banco de dados
-    static final String DATABASE_URL = "jdbc:mysql://localhost:3306/loja_coma_bem";
-
     public static void main(String[] args) {
 
         Produto p1 = new Produto();
         UnidadeMedida u1 = new UnidadeMedida();
 
-        p1.setIdproduto(5);
+        p1.setIdproduto(3);
         p1.setNome_produto("Macarrão");
         p1.setQuantidade_produto(5.00);
         p1.setPreco_produto(9.55);
@@ -26,77 +21,40 @@ public class Main {
         System.out.println("Quantidade: " + p1.getQuantidade_produto());
         System.out.println("Preço: " + p1.getPreco_produto());
         System.out.println("Unidade medida: " + p1.getFk_idunidade_medida());
+        System.out.println("\n");
 
-        Connection connection = null; // Gerenciar a conexão
-        Statement stm = null; // Instrução de consulta
-        ResultSet rs = null; // Gerenciar o resultado
+        //Conexao con = new Conexao();
+        //con.consulta();
 
-        try {
-            // Estabelecer conexão com o banco de dados
-            connection = DriverManager.getConnection(DATABASE_URL, "root", "root");
-            // Criar o statement para manupulação dos dados no banco de dados
-            stm = connection.createStatement();
-            // Consulta no banco de dados
-            rs = stm.executeQuery("select idproduto, nome_produto, quantidade_produto, preco_produto, fk_idunidade_medida, nome_unidade_medida from produto, unidade_medida where produto.fk_idunidade_medida = unidade_medida.idunidade_medida");
-            while (rs.next()) { // Enquanto houver linhas na tabela
-                // Imprime a linha encontrada
-                System.out.println(rs.getInt(1) +
-                        " - "+ rs.getString(2) +
-                        " - "+ rs.getFloat(3) +
-                        " - "+ rs.getBigDecimal(4) +
-                        " - "+ rs.getInt(5) +
-                        " - "+ rs.getString(6));
-            }
-            System.out.println("\n");
+        Produto p2 = new Produto();
+        p2.setIdproduto(6);
+        p2.setNome_produto("Leite");
+        p2.setQuantidade_produto(8.00);
+        p2.setPreco_produto(29.55);
+        p2.setFk_idunidade_medida(3);
 
-            // Insere um produto no banco de dados
-            stm.execute("insert into produto (idproduto, nome_produto, quantidade_produto, preco_produto, fk_idunidade_medida) values (5, 'Brócolis', 5, 6.90, 2)");
-            // Consulta no banco de dados
-            rs = stm.executeQuery("select idproduto, nome_produto, quantidade_produto, preco_produto, fk_idunidade_medida, nome_unidade_medida from produto, unidade_medida where produto.fk_idunidade_medida = unidade_medida.idunidade_medida");
-            while (rs.next()) { // Enquanto houver linhas na tabela
-                // Imprime a linha encontrada
-                System.out.println(rs.getInt(1) +
-                        " - "+ rs.getString(2) +
-                        " - "+ rs.getFloat(3) +
-                        " - "+ rs.getBigDecimal(4) +
-                        " - "+ rs.getInt(5) +
-                        " - "+ rs.getString(6));
-            }
-            System.out.println("\n");
+        //con.insercao(p2);
+        //con.consulta();
+        DAO_Produto produtosdao = new DAO_Produto();
+        produtosdao.consulta();
 
-            // Faz uma alteração na tabela produto
-            stm.execute("update produto set preco_produto = '6.94' where nome_produto = 'Leite'");
-            // Consulta no banco de dados
-            rs = stm.executeQuery("select idproduto, nome_produto, quantidade_produto, preco_produto, fk_idunidade_medida, nome_unidade_medida from produto, unidade_medida where produto.fk_idunidade_medida = unidade_medida.idunidade_medida");
-            while (rs.next()) { // Enquanto houver linhas na tabela
-                // Imprime a linha encontrada
-                System.out.println(rs.getInt(1) +
-                        " - "+ rs.getString(2) +
-                        " - "+ rs.getFloat(3) +
-                        " - "+ rs.getBigDecimal(4) +
-                        " - "+ rs.getInt(5) +
-                        " - "+ rs.getString(6));
-            }
-            System.out.println("\n");
+        DAO_Unidade unidadedao = new DAO_Unidade();
+        unidadedao.consulta();
 
-            // Exclui um produto no banco de dados
-            stm.execute("delete from produto where nome_produto = 'Leite'");
-            // Consulta no banco de dados
-            rs = stm.executeQuery("select idproduto, nome_produto, quantidade_produto, preco_produto, fk_idunidade_medida, nome_unidade_medida from produto, unidade_medida where produto.fk_idunidade_medida = unidade_medida.idunidade_medida");
-            while (rs.next()) { // Enquanto houver linhas na tabela
-                // Imprime a linha encontrada
-                System.out.println(rs.getInt(1) +
-                        " - "+ rs.getString(2) +
-                        " - "+ rs.getFloat(3) +
-                        " - "+ rs.getBigDecimal(4) +
-                        " - "+ rs.getInt(5) +
-                        " - "+ rs.getString(6));
-            }
-            System.out.println("\n");
+        //Produto p3 = new Produto();
+        //p3.setIdproduto(11);
+        //p3.setNome_produto("Milho Verde");
+        //p3.setQuantidade_produto(2.70);
+        //p3.setPreco_produto(4.12);
+        //p3.setFk_idunidade_medida(1);
 
-            connection.close();
-        } catch (SQLException se) {
-            se.printStackTrace();
-        }
+        //con.alteracao(p3);
+        //con.consulta();
+
+        //Produto p4 = new Produto();
+        //p4.setIdproduto(12);
+
+        //con.exclusao(p4);
+        //con.consulta();
     }
 }
